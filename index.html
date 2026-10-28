@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShambaConnect — Kenya's farm-to-market marketplace.">
+  <title>ShambaConnect | From Our Farms to Your Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement"><span>Harvest season is here</span><span class="announcement-center">Free delivery on orders over KES 5,000 in Nairobi</span><button class="announcement-close" aria-label="Close announcement">×</button></div>
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="ShambaConnect home"><span class="brand-mark">S</span><span>Shamba<span>Connect</span></span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#top">Home</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#farmers">For farmers</a>
+      <a href="#buyers">For buyers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button class="icon-btn cart-button" id="cartButton" aria-label="Shopping cart"><svg viewBox="0 0 24 24"><path d="M3 3h2l2.4 11.5a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <button class="button button-outline" id="signinButton">Sign in</button>
+      <button class="button button-primary" id="sellButton">Sell produce</button>
+    </div>
+    <button class="menu-button" id="menuButton" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> From Our Farms to Your Market.</div>
+        <h1>Fresh produce.<br><em>Fair prices.</em><br>Delivered.</h1>
+        <p>Buy quality produce directly from Kenyan farmers. Support Kenyan farmers and get fresher food at prices that work for everyone.</p>
+        <div class="hero-actions"><a class="button button-primary button-large" href="#marketplace">Shop fresh produce <span>→</span></a><button class="button button-ghost" id="farmerVideo"><span class="play">▶</span> Meet our farmers</button></div>
+        <div class="hero-trust"><div class="avatars"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=80" alt="Farmer"><img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=80" alt="Farmer"><img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80" alt="Farmer"></div><div><strong>2,400+ farmers</strong><span>trust ShambaConnect</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=1100&q=85" alt="Fresh vegetables at a Kenyan market"></div>
+        <div class="floating-card harvest-card"><div class="status-dot"></div><div><span>Today's harvest</span><strong>1,284 kg available</strong></div></div>
+        <div class="floating-card price-card"><span>Best price today</span><strong>Avocados <b>KES 40 <small>/ piece</small></b></strong></div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Platform statistics"><div><strong>2,400+</strong><span>Active farmers</span></div><div><strong>38</strong><span>Counties reached</span></div><div><strong>12,000+</strong><span>Orders fulfilled</span></div><div><strong>94%</strong><span>Fair price assurance</span></div></section>
+
+    <section class="marketplace section" id="marketplace">
+      <div class="section-heading"><div><span class="section-kicker">FRESH FROM THE FARM</span><h2>Today's marketplace</h2></div><a href="#marketplace" class="text-link">View all produce <span>→</span></a></div>
+      <div class="search-bar" id="searchBar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="searchInput" placeholder="Search for tomatoes, avocados, maize..." aria-label="Search products"></div>
+      <div class="category-tabs" id="categoryTabs" aria-label="Product categories"></div>
+      <div class="market-layout">
+        <aside class="filter-panel">
+          <h3>Filter produce</h3>
+          <div class="filter-group">
+            <label>County
+              <select id="countyFilter">
+                <option value="All">All counties</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Kiambu">Kiambu</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Kirinyaga">Kirinyaga</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Uasin Gishu">Uasin Gishu</option>
+              </select>
+            </label>
+            <label>Availability
+              <select id="availabilityFilter">
+                <option value="All">All</option>
+                <option value="Available">Available</option>
+                <option value="Reserved">Reserved</option>
+                <option value="Harvested">Harvested</option>
+              </select>
+            </label>
+            <div class="range-row">
+              <label>Min KES<input id="minPrice" type="number" min="0" value="0"></label>
+              <label>Max KES<input id="maxPrice" type="number" min="0" value="5000"></label>
+            </div>
+            <label>Only verified farms
+              <input id="verifiedOnly" type="checkbox">
+            </label>
+          </div>
+          <button class="button button-outline" id="clearFilters">Clear filters</button>
+        </aside>
+        <div class="market-main">
+          <div class="market-toolbar">
+            <div class="toolbar-summary"><span id="resultCount">8 results</span></div>
+            <div class="toolbar-actions">
+              <label>Sort by
+                <select id="sortSelect">
+                  <option value="popular">Popularity</option>
+                  <option value="price-low">Price: Low to high</option>
+                  <option value="price-high">Price: High to low</option>
+                  <option value="newest">Newest listings</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+          <div class="more-row">
+            <button class="button button-outline" id="loadMore">Load more</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section" id="how-it-works">
+      <div class="section-heading centered"><div><span class="section-kicker">SIMPLE & TRANSPARENT</span><h2>From farm to your table</h2></div></div>
+      <div class="process-grid">
+        <article><div class="process-icon">①</div><span>01</span><h3>Browse fresh produce</h3><p>Explore seasonal crops, compare prices, and choose verified farmers near you.</p></article>
+        <article><div class="process-icon">②</div><span>02</span><h3>Order with confidence</h3><p>Place an order securely and communicate directly with the farmer.</p></article>
+        <article><div class="process-icon">③</div><span>03</span><h3>Pay via M-Pesa</h3><p>Use safe, familiar M-Pesa payments with clear order and delivery details.</p></article>
+        <article><div class="process-icon">④</div><span>04</span><h3>Fresh delivery</h3><p>Your produce travels through our trusted network directly to your doorstep.</p></article>
+      </div>
+    </section>
+
+    <section class="farmer-banner section" id="farmers">
+      <div class="farmer-image"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85" alt="Farmer working in a field"></div>
+      <div class="farmer-content"><span class="section-kicker">FOR FARMERS</span><h2>Grow more than crops.<br><em>Grow your business.</em></h2><p>Reach buyers across Kenya, set transparent prices, and get paid faster without unnecessary intermediaries.</p><ul><li><span>✓</span> Set your own prices</li><li><span>✓</span> Access bulk buyers</li><li><span>✓</span> Get market insights and demand forecasts</li></ul><button class="button button-primary button-large" id="joinFarmers">Join as a farmer <span>→</span></button></div>
+    </section>
+
+    <section class="buyers section" id="buyers">
+      <div class="section-heading centered"><div><span class="section-kicker">BUILT FOR EVERY BUYER</span><h2>One marketplace, endless possibilities</h2></div></div>
+      <div class="buyer-grid"><article><div class="buyer-symbol">01</div><h3>Restaurants</h3><p>Reliable daily supply of fresh ingredients.</p></article><article><div class="buyer-symbol">02</div><h3>Retailers</h3><p>Competitive wholesale prices and consistent quality.</p></article><article><div class="buyer-symbol">03</div><h3>Grocery stores</h3><p>Source locally and keep shelves stocked.</p></article><article><div class="buyer-symbol">04</div><h3>Exporters</h3><p>Discover verified produce for international markets.</p></article></div>
+    </section>
+
+    <section class="testimonials section" id="about">
+      <div class="section-heading centered"><div><span class="section-kicker">DEMO TESTIMONIALS</span><h2>Trusted by food businesses across Kenya</h2></div></div>
+      <div class="testimonial-grid">
+        <article><p>"The platform gave us direct access to a reliable tomato supplier in Kirinyaga. We reduced our procurement cost by over 18% while maintaining quality."</p><div><strong>Anne W.</strong><span>Restaurant buyer, Nairobi</span></div></article>
+        <article><p>"We buy fresh vegetables weekly and use the rating system to compare dependable farms. It feels like a modern procurement system adapted for Kenya."</p><div><strong>Michael K.</strong><span>Wholesaler, Mombasa</span></div></article>
+        <article><p>"The dashboard made it easy to manage our produce inventory and track orders. We finally had visibility on what was selling and what to harvest next."</p><div><strong>Grace N.</strong><span>Farmer, Nyeri</span></div></article>
+      </div>
+    </section>
+
+    <section class="cta-panel section">
+      <div>
+        <span class="section-kicker">READY TO GROW</span>
+        <h2>Make your farm or business part of Kenya's smarter food network.</h2>
+      </div>
+      <button class="button button-primary button-large" id="ctaStart">Create account</button>
+    </section>
+  </main>
+
+  <footer id="contact"><div class="footer-main"><div><a class="brand brand-light" href="#top"><span class="brand-mark">S</span><span>Shamba<span>Connect</span></span></a><p>Connecting Kenya's farmers directly with buyers for a fairer, fresher food system.</p></div><div><h4>Marketplace</h4><a href="#marketplace">Browse produce</a><a href="#marketplace">Categories</a><a href="#marketplace">Seasonal crops</a></div><div><h4>Company</h4><a href="#about">About us</a><a href="#farmers">For farmers</a><a href="#how-it-works">How it works</a></div><div><h4>Contact</h4><p>info@shambaconnect.co.ke<br>+254 700 123 456<br>Nairobi, Kenya</p><form id="newsletter"><input type="email" placeholder="Your email address" required><button aria-label="Subscribe">→</button></form></div></div><div class="footer-bottom"><span>© 2026 ShambaConnect. All rights reserved.</span><div><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart"><div class="panel-head"><h2>Your basket <span id="cartItemCount">0 items</span></h2><button class="close-button" id="closeCart">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">KES 0</strong></div><button class="button button-primary button-large checkout-button" id="checkoutButton">Proceed to checkout</button><p>Secure payments with M-Pesa</p></div></aside>
+
+  <dialog class="modal" id="checkoutModal"><form method="dialog" class="modal-card" id="checkoutForm"><button class="modal-close" value="cancel" aria-label="Close">×</button><div id="checkoutContent"></div></form></dialog>
+
+  <dialog class="modal" id="detailsModal"><div class="modal-card details-modal" id="detailsContent"></div></dialog>
+
+  <dialog class="modal" id="listingModal"><form method="dialog" class="modal-card listing-form" id="listingForm"><button class="modal-close" value="cancel" aria-label="Close">×</button><div class="modal-icon">S</div><h2>List your produce</h2><p>Add a harvest to the ShambaConnect marketplace.</p><div class="form-grid"><label>Product name<input name="name" required placeholder="e.g. Red onions"></label><label>Category<select name="category"><option>Vegetables</option><option>Fruits</option><option>Grains</option><option>Dairy & Eggs</option></select></label><label>Variety<input name="variety" placeholder="e.g. F1 Red King"></label><label>Price per unit (KES)<input name="price" type="number" min="1" required></label><label>Unit<select name="unit"><option>per kg</option><option>per crate</option><option>per bag</option><option>per tray</option></select></label><label>Available quantity<input name="quantity" type="number" min="1" required></label><label>Minimum order<input name="minimum" type="number" min="1" value="1"></label><label>Harvest date<input name="harvest" type="date"></label><label>Location<input name="location" required placeholder="e.g. Nyeri"></label><label>Availability<select name="status"><option>Available</option><option>Reserved</option><option>Harvested</option><option>Sold</option></select></label></div><button class="button button-primary button-large" value="confirm">Publish listing</button></form></dialog>
+
+  <dialog class="modal" id="signinModal"><form method="dialog" class="modal-card"><button class="modal-close" value="cancel" aria-label="Close">×</button><div class="modal-icon">S</div><h2>Welcome back</h2><p>Sign in to manage orders and listings.</p><label>Account type<select name="role"><option>Buyer</option><option>Farmer</option><option>Administrator</option></select></label><label>Email address<input type="email" required placeholder="you@example.com"></label><label>Password<input type="password" required placeholder="••••••••"></label><button class="button button-primary button-large" value="confirm">Sign in</button></form></dialog>
+
+  <dialog class="modal" id="roleModal"><div class="modal-card role-dashboard"><button class="modal-close" onclick="this.closest('dialog').close()" aria-label="Close">×</button><div id="roleDashboardContent"></div></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
